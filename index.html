@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâniva</h1>
+    <p>Tente abrir esse site em váriois dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+    <picture>
+        <source media="(max-width: 750px )" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p>
+    <!-- <audio src="audio/guanacast-33.mp3" controls autoplay></audio> -->
+     <audio preload="metadata" autoplay controls loop>
+        <!-- Parâmetros:
+         preload - auto - e preciso carregar todo o audio antes de mostrar a página.
+                 - metadata - mostra informações básicas.
+                 - none - Não carrega nada.
+         controls - utilizado para mostrar os controles.
+         loop - toca a música novamente quando finaliza.
+        -->
+        <source src="midia/nightRun.mp3" type="audio/mpeg">
+        <source src="midia/nightRun.ogg" type="audio/ogg">
+        <!-- Se possível não utilizar o wav são arquivos muito pesados. -->
+        <source src="midia/nightRun.wav" type="audio/wav">
+        <p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="midia/nightRun.mp3">Clique aqui</a> para baixar o arquivo em MP3.</p>
+     </audio>
+
+     <h1>Links de referência para vídeos:</h1>
+     <p>https://www.pexels.com/pt-br/ baixar vídeos</p>
+     <p>https://handbrake.fr/ utilizado para converter vídeos</p>
+     <h2>Inserindo vídeos hospedados localmente</h2>
+     <p>Este vídeo está hospedado no meu próprio servidor</p>
+     <!-- <video src="videos/Meu-Video2.webm" width="500" controls></video> -->
+      <video width="560" poster="" controls>
+        <!-- Width - responsável pelo tamanho a ser visualizado
+             poster - responsável por mostrar uma capa antes do play
+             controls - responsável por mostrar os botões de controle.
+             Obs.: Importante colocar a ordem correta do maior para o menor (tamanho).
+             Obs2.: Esta técnica de hospedágem local vai consumir muita  banda de dados, e pode ser um problema para o seu cliente.
+        -->
+        <source src="videos/meu-video.mp4" type="video/mp4">
+        <source src="videos/Meu-Video2.mkv" type="video/mkv">
+        <source src="videos/Meu-Video2.mp4" type="video/mp4">
+        <source src="videos/Meu-Video2.webm" type="video/webm">
+        <p>Seu navegador não tem compatibilidade com reprodução de vídeos.</p>
+      </video>
+      <h1>Inserindo vídeos no YouTube</h1>
+      <!-- Passo: 
+      - Acessar o youtube;
+      - Usar vídeos m4v quando possível;
+      - Para assinantes: pode utilizar o vimeo;
+      -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/FdE5G95B7Mg?si=fB4U4gbPpuNa4uIK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
